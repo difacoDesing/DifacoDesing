@@ -1,0 +1,3240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Difaco Desing · Productora Multimedios</title>
+
+  <meta
+    name="description"
+    content="Difaco Desing — productora creativa que combina diseño, comunicación y estrategia para transformar ideas en experiencias visuales con impacto."
+  >
+
+  <link rel="icon" href="assets/Logo Difaco Desing.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <style>
+
+    :root{
+      --azul-violeta:#2E2A8A;
+      --purpura:#6A0DAD;
+      --naranja:#FF6F00;
+      --amarillo:#FFD600;
+      --difaco-rojo:#FF2E2E;
+      --blanco:#FFFFFF;
+      --navy:#0B0F3D;
+      --gris-oscuro:#A9A9A9;
+      --ink:#171334;
+      --display:'Baloo 2',system-ui,sans-serif;
+      --body:'Manrope',system-ui,sans-serif;
+      --radius:18px;
+      --shadow-lg:0 20px 45px rgba(11,15,61,.35);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:var(--body);
+      color:var(--ink);
+      background:var(--blanco);
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    button{
+      font-family:inherit;
+      cursor:pointer;
+      border:none;
+      background:none;
+    }
+
+    h1,
+    h2,
+    h3{
+      font-family:var(--display);
+      margin:0;
+      line-height:1.2;
+    }
+
+    .volumen{
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.35),
+        0 2px 0 rgba(0,0,0,.12),
+        0 4px 0 rgba(0,0,0,.12),
+        0 6px 10px rgba(0,0,0,.35),
+        0 10px 22px rgba(0,0,0,.28);
+    }
+
+    .section-title-wrap{
+      display:inline-block;
+      background:var(--navy);
+      padding:.4rem 1.4rem;
+      border-radius:12px;
+      box-shadow:var(--shadow-lg);
+      margin-bottom:.8rem;
+    }
+
+    .section-title-wrap h1{
+      color:var(--blanco);
+      font-size:clamp(1.9rem,4vw,2.9rem);
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.7rem 5%;
+      background:rgba(11,15,61,.92);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.1);
+      transition:padding .3s ease;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.7rem;
+    }
+
+    .brand img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 4px 14px rgba(0,0,0,.4);
+    }
+
+    .brand-text{
+      display:flex;
+      align-items:baseline;
+      gap:.3rem;
+      line-height:1;
+    }
+
+    .brand-text .difaco{
+      font-family:var(--display);
+      font-weight:800;
+      font-size:1.35rem;
+      color:var(--difaco-rojo);
+    }
+
+    .brand-text .desing{
+      font-family:var(--display);
+      font-weight:700;
+      font-size:.9rem;
+      color:var(--blanco);
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    nav.main-nav{
+      display:flex;
+      align-items:center;
+    }
+
+    nav.main-nav ul{
+      display:flex;
+      gap:1.5rem;
+      align-items:center;
+    }
+
+    nav.main-nav a{
+      color:var(--blanco);
+      font-weight:700;
+      font-size:.92rem;
+      position:relative;
+      padding:.3rem 0;
+      display:inline-flex;
+      align-items:center;
+      transition:color .25s ease;
+    }
+
+    nav.main-nav a:not(.nav-cta):not(.dropdown-link)::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:3px;
+      background:linear-gradient(90deg,var(--naranja),var(--amarillo));
+      border-radius:3px;
+      transition:width .3s ease;
+    }
+
+    nav.main-nav a:not(.nav-cta):not(.dropdown-link):hover{
+      color:var(--amarillo);
+    }
+
+    nav.main-nav a:not(.nav-cta):not(.dropdown-link):hover::after{
+      width:100%;
+    }
+
+    .nav-cta{
+      display:inline-flex !important;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      background:var(--naranja) !important;
+      color:var(--blanco) !important;
+      font-weight:800;
+      padding:.55rem 1.2rem !important;
+      border-radius:999px;
+      box-shadow:0 6px 18px rgba(255,111,0,.45);
+      font-size:.82rem !important;
+      white-space:nowrap !important;
+    }
+
+    .dropdown{
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+
+    .dropdown-btn{
+      background:rgba(255,255,255,.12);
+      color:var(--blanco);
+      border:1px solid rgba(255,255,255,.25);
+      font-weight:700;
+      font-size:.85rem;
+      padding:.45rem .9rem;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+    }
+
+    .dropdown-menu{
+      position:absolute;
+      top:calc(100% + 12px);
+      right:0;
+      background:var(--navy);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:14px;
+      box-shadow:0 16px 35px rgba(0,0,0,.45);
+      min-width:240px;
+      padding:.6rem;
+      display:none;
+      flex-direction:column;
+      gap:.4rem;
+      z-index:1100;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu{
+      display:flex;
+    }
+
+    .dropdown-menu a{
+      padding:.65rem .9rem;
+      color:rgba(255,255,255,.92);
+      font-size:.88rem;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+      border-radius:10px;
+    }
+
+    .dropdown-menu a i{
+      color:var(--amarillo);
+    }
+
+    .dropdown-menu a:hover{
+      background:rgba(255,255,255,.12);
+      color:var(--amarillo);
+    }
+
+    .burger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:none;
+      padding:.4rem;
+      z-index:1200;
+    }
+
+    .burger span{
+      width:26px;
+      height:3px;
+      background:var(--blanco);
+      border-radius:3px;
+      transition:.3s;
+    }
+
+    .burger.open span:nth-child(1){
+      transform:translateY(8px) rotate(45deg);
+    }
+
+    .burger.open span:nth-child(2){
+      opacity:0;
+    }
+
+    .burger.open span:nth-child(3){
+      transform:translateY(-8px) rotate(-45deg);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(
+          150deg,
+          var(--azul-violeta) 0%,
+          var(--purpura) 55%,
+          #3a0f66 100%
+        );
+    }
+
+    .hero canvas{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(255,111,0,.28),
+          transparent 45%
+        ),
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(255,214,0,.22),
+          transparent 50%
+        );
+      animation:drift 14s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    @keyframes drift{
+      0%{
+        transform:translate(0,0) scale(1);
+      }
+      100%{
+        transform:translate(-3%,3%) scale(1.08);
+      }
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:5;
+      max-width:800px;
+      margin:0 auto;
+      padding:7.5rem 6% 3.5rem;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .hero-content .banner-logo{
+      width:140px;
+      height:140px;
+      object-fit:cover;
+      border-radius:50%;
+      filter:drop-shadow(0 12px 30px rgba(0,0,0,.5));
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      font-size:.78rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:var(--amarillo);
+      background:rgba(0,0,0,.28);
+      padding:.4rem 1rem;
+      border-radius:999px;
+      border:1px solid rgba(255,214,0,.4);
+      margin-top:1.8rem;
+      margin-bottom:1.2rem;
+    }
+
+    .hero-content h1{
+      color:var(--blanco);
+      font-size:clamp(2.2rem,5.5vw,3.8rem);
+      font-weight:800;
+      margin-bottom:1rem;
+    }
+
+    .hero-content h1 span{
+      background:linear-gradient(
+        100deg,
+        var(--amarillo),
+        var(--naranja)
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      display:inline-block;
+    }
+
+    .hero-content p{
+      color:rgba(255,255,255,.92);
+      font-size:1.1rem;
+      font-weight:500;
+      max-width:580px;
+      margin:0 auto 1.8rem;
+      line-height:1.5;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:1rem;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      padding:.85rem 1.8rem;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.95rem;
+      transition:.25s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(
+        120deg,
+        var(--naranja),
+        var(--difaco-rojo)
+      );
+      color:var(--blanco);
+      box-shadow:0 10px 26px rgba(255,111,0,.45);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-ghost{
+      background:rgba(255,255,255,.12);
+      color:var(--blanco);
+      border:1.5px solid rgba(255,255,255,.5);
+    }
+
+    .btn-ghost:hover{
+      background:rgba(255,255,255,.22);
+      transform:translateY(-3px);
+    }
+
+    .scroll-hint{
+      position:absolute;
+      bottom:1.5rem;
+      left:50%;
+      transform:translateX(-50%);
+      color:rgba(255,255,255,.75);
+      font-size:1.3rem;
+      z-index:5;
+      animation:bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translate(-50%,0);
+      }
+      50%{
+        transform:translate(-50%,8px);
+      }
+    }
+
+    /* =========================
+       SECCIONES
+    ========================= */
+
+    .section{
+      position:relative;
+      padding:4.5rem 6%;
+      overflow:hidden;
+    }
+
+    .section-inner{
+      position:relative;
+      z-index:4;
+      max-width:1180px;
+      margin:0 auto;
+    }
+
+    /* =========================
+       SOBRE NOSOTROS
+    ========================= */
+
+    #sobre-nosotros{
+      background:
+        linear-gradient(
+          160deg,
+          #241f6e,
+          var(--purpura) 70%
+        );
+      text-align:center;
+    }
+
+    #sobre-nosotros .waves{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      opacity:.55;
+    }
+
+    #sobre-nosotros .section-title-wrap{
+      margin-top:-2.5rem;
+      margin-bottom:1.5rem;
+      position:relative;
+      z-index:5;
+    }
+
+    #sobre-nosotros h2{
+      color:var(--blanco);
+      font-family:var(--body);
+      font-weight:600;
+      font-size:clamp(1.1rem,2.2vw,1.45rem);
+      max-width:760px;
+      margin:0 auto;
+      line-height:1.5;
+    }
+
+    #sobre-nosotros h2 b{
+      color:var(--amarillo);
+      font-weight:800;
+    }
+
+    .about-badges{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1.2rem;
+      max-width:650px;
+      margin:2.5rem auto 0;
+    }
+
+    .tarjeta-cuadro{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:18px;
+      padding:1.4rem 1rem;
+      color:var(--blanco);
+      backdrop-filter:blur(8px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      min-height:140px;
+      transition:.25s ease;
+    }
+
+    .about-badges .tarjeta-cuadro:nth-child(1),
+    .about-badges .tarjeta-cuadro:nth-child(2){
+      margin-top:2rem;
+    }
+
+    .tarjeta-cuadro:hover{
+      transform:translateY(-4px);
+      border-color:var(--amarillo);
+    }
+
+    .icono-box{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      background:
+        linear-gradient(
+          135deg,
+          var(--naranja),
+          var(--amarillo)
+        );
+      color:var(--navy);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.2rem;
+      margin-bottom:.6rem;
+    }
+
+    .about-badges strong{
+      font-family:var(--display);
+      font-size:1.15rem;
+      color:var(--blanco);
+      margin-bottom:.2rem;
+    }
+
+    .about-badges span{
+      font-size:.82rem;
+      opacity:.88;
+    }
+
+    /* =========================
+       TRABAJOS
+    ========================= */
+
+    #trabajos{
+      background:var(--navy);
+      text-align:center;
+    }
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;
+      margin-top:2rem;
+    }
+
+    .portfolio-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--radius);
+      padding:1.5rem;
+      text-align:left;
+      transition:.3s ease;
+    }
+
+    .portfolio-card:hover{
+      transform:translateY(-5px);
+      border-color:var(--amarillo);
+    }
+
+    .portfolio-card h3{
+      color:var(--amarillo);
+      font-size:1.15rem;
+      margin-bottom:.4rem;
+    }
+
+    .portfolio-card span{
+      display:inline-block;
+      font-size:.75rem;
+      background:rgba(255,111,0,.25);
+      color:var(--naranja);
+      padding:.2rem .6rem;
+      border-radius:999px;
+      font-weight:700;
+      margin-bottom:.8rem;
+    }
+
+    .portfolio-card p{
+      color:rgba(255,255,255,.8);
+      font-size:.88rem;
+      margin:0;
+      line-height:1.5;
+    }
+
+    /* =========================
+       ENTREVISTAS
+    ========================= */
+
+    .portfolio-video{
+      margin:2.5rem auto 0;
+      max-width:980px;
+      padding:1.25rem;
+      border-radius:22px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(46,42,138,.22),
+          rgba(106,13,173,.18)
+        );
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:var(--shadow-lg);
+      text-align:left;
+    }
+
+    .video-label{
+      display:inline-block;
+      margin-bottom:.45rem;
+      color:var(--naranja);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.8rem;
+    }
+
+    .portfolio-video h3{
+      color:var(--blanco);
+      margin-bottom:.45rem;
+      font-size:1.35rem;
+    }
+
+    .portfolio-video p{
+      color:rgba(255,255,255,.82);
+      margin:0;
+      line-height:1.5;
+    }
+
+    /* MINIATURA Y ENLACE DIRECTO A YOUTUBE */
+
+    .entrevista-link-box{
+      display:flex;
+      align-items:center;
+      gap:1.4rem;
+      margin-top:1.2rem;
+      padding:1rem;
+      border-radius:16px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .entrevista-miniatura{
+      position:relative;
+      width:210px;
+      min-width:210px;
+      border-radius:12px;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .entrevista-miniatura img{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      transition:transform .3s ease;
+    }
+
+    .entrevista-miniatura:hover img{
+      transform:scale(1.04);
+    }
+
+    .youtube-icon{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,.18);
+      transition:.25s ease;
+    }
+
+    .youtube-icon i{
+      font-size:3.3rem;
+      color:#ff0000;
+      filter:drop-shadow(0 3px 7px rgba(0,0,0,.7));
+    }
+
+    .entrevista-miniatura:hover .youtube-icon{
+      background:rgba(0,0,0,.35);
+    }
+
+    .entrevista-texto{
+      flex:1;
+    }
+
+    .entrevista-texto strong{
+      display:block;
+      color:var(--blanco);
+      font-size:1rem;
+      margin-bottom:.7rem;
+    }
+
+    .youtube-directo{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      background:#ff0000;
+      color:#fff;
+      padding:.65rem 1rem;
+      border-radius:999px;
+      font-size:.82rem;
+      font-weight:800;
+      transition:.25s ease;
+    }
+
+    .youtube-directo:hover{
+      transform:translateY(-2px);
+      background:#d90000;
+    }
+
+    /* =========================
+       HISTORIA
+    ========================= */
+
+    #historia{
+      background:
+        linear-gradient(
+          140deg,
+          #1f1a54,
+          #4a0b7a
+        );
+      color:var(--blanco);
+      text-align:center;
+    }
+
+    .story-text{
+      font-size:1.05rem;
+      line-height:1.7;
+      max-width:780px;
+      margin:1.5rem auto 0;
+      color:rgba(255,255,255,.9);
+    }
+
+    /* =========================
+       SERVICIOS
+    ========================= */
+
+    #servicios{
+      background:
+        linear-gradient(
+          -45deg,
+          var(--azul-violeta),
+          var(--purpura),
+          #1c1660,
+          var(--azul-violeta)
+        );
+      background-size:400% 400%;
+      animation:gradientshift 16s ease infinite;
+      text-align:center;
+    }
+
+    @keyframes gradientshift{
+      0%{
+        background-position:0% 50%;
+      }
+      50%{
+        background-position:100% 50%;
+      }
+      100%{
+        background-position:0% 50%;
+      }
+    }
+
+    #servicios .lead{
+      color:rgba(255,255,255,.88);
+      max-width:640px;
+      margin:0 auto 2.2rem;
+    }
+
+    .carousel-track{
+      display:flex;
+      gap:1.6rem;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding:.5rem .5rem 1.4rem;
+      scrollbar-width:none;
+    }
+
+    .carousel-track::-webkit-scrollbar{
+      display:none;
+    }
+
+    .service-card{
+      scroll-snap-align:start;
+      flex:0 0 270px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:var(--radius);
+      padding:1.8rem 1.4rem 1.5rem;
+      text-align:center;
+      backdrop-filter:blur(8px);
+      display:flex;
+      flex-direction:column;
+      transition:.3s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      background:rgba(255,255,255,.11);
+      border-color:rgba(255,214,0,.5);
+    }
+
+    .service-icon{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      margin:0 auto 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        linear-gradient(
+          135deg,
+          var(--naranja),
+          var(--amarillo)
+        );
+      font-size:1.45rem;
+      color:var(--navy);
+    }
+
+    .service-card h2{
+      color:var(--blanco);
+      font-size:1.2rem;
+      margin-bottom:.5rem;
+    }
+
+    .service-card p{
+      color:rgba(255,255,255,.78);
+      font-size:.88rem;
+      line-height:1.5;
+      flex-grow:1;
+      margin:0 0 1.2rem;
+    }
+
+    .service-btns{
+      display:flex;
+      flex-direction:column;
+      gap:.6rem;
+    }
+
+    .btn-price{
+      background:rgba(255,214,0,.15);
+      color:var(--amarillo);
+      border:1.5px solid var(--amarillo);
+      border-radius:10px;
+      padding:.6rem;
+      font-weight:800;
+      font-size:.85rem;
+    }
+
+    .btn-price:hover{
+      background:var(--amarillo);
+      color:var(--navy);
+    }
+
+    .btn-contact{
+      background:
+        linear-gradient(
+          120deg,
+          var(--naranja),
+          var(--difaco-rojo)
+        );
+      color:var(--blanco);
+      border-radius:10px;
+      padding:.6rem;
+      font-weight:800;
+      font-size:.85rem;
+    }
+
+    .carousel-arrows{
+      display:flex;
+      gap:1rem;
+      justify-content:center;
+      margin-top:.4rem;
+    }
+
+    .arrow-btn{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:rgba(255,255,255,.1);
+      border:1.5px solid rgba(255,255,255,.4);
+      color:var(--blanco);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .arrow-btn:hover{
+      background:var(--amarillo);
+      color:var(--navy);
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(11,15,61,.78);
+      backdrop-filter:blur(4px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+      padding:1.5rem;
+    }
+
+    .modal-overlay.open{
+      display:flex;
+    }
+
+    .modal-box{
+      background:var(--blanco);
+      border-radius:var(--radius);
+      max-width:560px;
+      width:100%;
+      max-height:82vh;
+      overflow-y:auto;
+      padding:2rem;
+      position:relative;
+      box-shadow:var(--shadow-lg);
+    }
+
+    .modal-close{
+      position:absolute;
+      top:1rem;
+      right:1rem;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:var(--navy);
+      color:var(--blanco);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .modal-box h3{
+      color:var(--azul-violeta);
+      font-size:1.4rem;
+      margin-bottom:.2rem;
+      padding-right:2rem;
+    }
+
+    .modal-sub{
+      color:var(--purpura);
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:1.2rem;
+    }
+
+    .info-item{
+      border-left:4px solid var(--naranja);
+      background:#f7f5ff;
+      border-radius:8px;
+      padding:.8rem 1rem;
+      margin-bottom:.7rem;
+    }
+
+    .info-item h4{
+      margin:0 0 .2rem;
+      font-weight:800;
+      color:var(--ink);
+      font-size:.92rem;
+    }
+
+    .info-item p{
+      margin:.2rem 0 0;
+      font-size:.82rem;
+      color:#555;
+      line-height:1.4;
+    }
+
+    .modal-cta{
+      display:inline-flex;
+      margin-top:.5rem;
+      background:
+        linear-gradient(
+          120deg,
+          var(--naranja),
+          var(--difaco-rojo)
+        );
+      color:var(--blanco);
+      padding:.75rem 1.5rem;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.88rem;
+      gap:.5rem;
+      align-items:center;
+    }
+
+    /* =========================
+       CONTACTO
+    ========================= */
+
+    #contacto{
+      background:var(--gris-oscuro);
+    }
+
+    #contacto .section-inner{
+      text-align:center;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+      gap:1.2rem;
+      margin-top:2rem;
+      text-align:left;
+    }
+
+    .contact-card{
+      background:var(--blanco);
+      border-radius:var(--radius);
+      padding:1.5rem 1.3rem;
+      box-shadow:0 12px 26px rgba(0,0,0,.18);
+      border-top:4px solid var(--naranja);
+    }
+
+    .contact-card i{
+      color:var(--purpura);
+      font-size:1.4rem;
+      margin-bottom:.6rem;
+      display:block;
+    }
+
+    .contact-card h3{
+      font-size:.95rem;
+      font-family:var(--body);
+      font-weight:800;
+      margin-bottom:.3rem;
+      color:var(--navy);
+    }
+
+    .contact-card p{
+      margin:0;
+      color:#333;
+      font-size:.88rem;
+      line-height:1.45;
+    }
+
+    .contact-card a{
+      color:var(--difaco-rojo);
+      font-weight:700;
+    }
+
+    .contact-form{
+      background:var(--blanco);
+      border-radius:var(--radius);
+      padding:1.8rem;
+      margin-top:2rem;
+      box-shadow:0 12px 26px rgba(0,0,0,.18);
+      text-align:left;
+      max-width:640px;
+      margin-inline:auto;
+    }
+
+    .contact-form .field{
+      margin-bottom:1rem;
+    }
+
+    .contact-form label{
+      display:block;
+      font-weight:700;
+      font-size:.82rem;
+      margin-bottom:.3rem;
+      color:var(--navy);
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:.7rem .85rem;
+      border-radius:10px;
+      border:1.5px solid #ccc;
+      font-family:inherit;
+      font-size:.9rem;
+    }
+
+    .contact-form button{
+      background:
+        linear-gradient(
+          120deg,
+          var(--naranja),
+          var(--difaco-rojo)
+        );
+      color:var(--blanco);
+      padding:.8rem 1.6rem;
+      border-radius:999px;
+      font-weight:800;
+      width:100%;
+      font-size:.92rem;
+    }
+
+    .map-embed{
+      border-radius:var(--radius);
+      overflow:hidden;
+      margin-top:1.8rem;
+      box-shadow:0 12px 26px rgba(0,0,0,.18);
+    }
+
+    .map-embed iframe{
+      width:100%;
+      height:260px;
+      border:0;
+      display:block;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      background:var(--gris-oscuro);
+      padding:2.2rem 6% 1.4rem;
+      border-top:2px solid rgba(0,0,0,.08);
+    }
+
+    .footer-top{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.8rem;
+      justify-content:space-between;
+      align-items:center;
+      max-width:1180px;
+      margin:0 auto 1.4rem;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:.7rem;
+    }
+
+    .footer-brand img{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .footer-social{
+      display:flex;
+      gap:.8rem;
+    }
+
+    .footer-social a{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:var(--navy);
+      color:var(--blanco);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:.25s ease;
+    }
+
+    .footer-social a:hover{
+      background:var(--naranja);
+      transform:translateY(-3px);
+    }
+
+    .footer-links{
+      display:flex;
+      gap:1.4rem;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-weight:700;
+      font-size:.85rem;
+      color:var(--navy);
+    }
+
+    .footer-links a:hover{
+      color:var(--naranja);
+    }
+
+    .footer-bottom{
+      text-align:center;
+      font-size:.78rem;
+      color:#333;
+      border-top:1px solid rgba(0,0,0,.1);
+      max-width:1180px;
+      margin:0 auto;
+      padding-top:1rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:980px){
+
+      nav.main-nav{
+        position:fixed;
+        top:0;
+        right:0;
+        height:100vh;
+        width:min(80vw,320px);
+        background:
+          linear-gradient(
+            160deg,
+            var(--azul-violeta),
+            var(--purpura)
+          );
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transform:translateX(100%);
+        transition:transform .35s ease;
+        z-index:1100;
+        box-shadow:-10px 0 30px rgba(0,0,0,.5);
+      }
+
+      nav.main-nav.open{
+        transform:translateX(0);
+      }
+
+      nav.main-nav ul{
+        flex-direction:column;
+        text-align:center;
+        gap:1.5rem;
+        width:100%;
+        padding:0 1.5rem;
+      }
+
+      nav.main-nav a{
+        font-size:1.1rem;
+        justify-content:center;
+      }
+
+      .dropdown{
+        width:100%;
+        justify-content:center;
+      }
+
+      .dropdown-btn{
+        justify-content:center;
+        width:100%;
+      }
+
+      .dropdown-menu{
+        position:relative;
+        top:0;
+        box-shadow:none;
+        border:none;
+        background:rgba(0,0,0,.25);
+        margin-top:.5rem;
+        min-width:100%;
+      }
+
+      .dropdown-menu a{
+        justify-content:flex-start;
+      }
+
+      .burger{
+        display:flex;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .entrevista-link-box{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .entrevista-miniatura{
+        width:100%;
+        min-width:0;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .section{
+        padding:3.8rem 5%;
+      }
+
+      .hero-content{
+        padding-top:6rem;
+      }
+
+      .contact-form{
+        padding:1.4rem;
+      }
+
+      .about-badges{
+        grid-template-columns:1fr;
+        gap:.9rem;
+        max-width:320px;
+      }
+
+      .about-badges .tarjeta-cuadro:nth-child(1),
+      .about-badges .tarjeta-cuadro:nth-child(2){
+        margin-top:0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="brand">
+
+      <img
+        src="assets/Logo Difaco Desing.jpeg"
+        alt="Logo Difaco Desing"
+      >
+
+      <div class="brand-text">
+
+        <span class="difaco">
+          Difaco
+        </span>
+
+        <span class="desing">
+          Desing
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <nav
+      class="main-nav"
+      id="mainNav"
+    >
+
+      <ul>
+
+        <li>
+          <a
+            href="#inicio"
+            class="nav-link"
+          >
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#sobre-nosotros"
+            class="nav-link"
+          >
+            Sobre nosotros
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#servicios"
+            class="nav-link"
+          >
+            Servicios
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#contacto"
+            class="nav-link"
+          >
+            Contacto
+          </a>
+        </li>
+
+        <li>
+
+          <a
+            href="https://wa.me/542804505367"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-cta nav-link"
+          >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Cotizar ahora
+
+          </a>
+
+        </li>
+
+
+        <li class="dropdown">
+
+          <button class="dropdown-btn">
+
+            Más
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </button>
+
+
+          <div class="dropdown-menu">
+
+            <a
+              href="#trabajos"
+              class="dropdown-link nav-link"
+            >
+
+              <i class="fa-solid fa-briefcase"></i>
+
+              Trabajos realizados
+
+            </a>
+
+            <a
+              href="#historia"
+              class="dropdown-link nav-link"
+            >
+
+              <i class="fa-solid fa-book-open"></i>
+
+              Historia de la productora
+
+            </a>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <button
+      class="burger"
+      id="burgerBtn"
+      aria-label="Abrir menú"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         INICIO
+    ========================= -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
+      <canvas id="particleCanvas"></canvas>
+
+
+      <div class="hero-content">
+
+        <img
+          src="assets/Logo Difaco Desing.jpeg"
+          alt="Difaco Desing"
+          class="banner-logo"
+        >
+
+
+        <span class="eyebrow">
+
+          <i class="fa-solid fa-sparkles"></i>
+
+          Productora de multimedios
+
+        </span>
+
+
+        <h1 class="volumen">
+
+          Ideas que se convierten en
+
+          <span>
+            experiencias visuales
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          Diseño, comunicación y estrategia para emprendedores
+          que quieren que su marca se vea, se escuche y se recuerde.
+
+        </p>
+
+
+        <div class="hero-btns">
+
+          <a
+            href="#servicios"
+            class="btn btn-primary"
+          >
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Ver servicios
+
+          </a>
+
+
+          <a
+            href="#contacto"
+            class="btn btn-ghost"
+          >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Hablemos de tu proyecto
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a
+        href="#sobre-nosotros"
+        class="scroll-hint"
+        aria-label="Bajar"
+      >
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE NOSOTROS
+    ========================= -->
+
+    <section
+      class="section"
+      id="sobre-nosotros"
+    >
+
+
+      <svg
+        class="waves"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          fill="#FF6F00"
+          fill-opacity="0.18"
+        >
+
+          <animate
+            attributeName="d"
+            dur="9s"
+            repeatCount="indefinite"
+            values="
+              M0,160 C320,220 420,80 720,140 C1020,200 1120,60 1440,120 L1440,320 L0,320 Z;
+              M0,140 C320,80 420,220 720,160 C1020,100 1120,220 1440,160 L1440,320 L0,320 Z;
+              M0,160 C320,220 420,80 720,140 C1020,200 1120,60 1440,120 L1440,320 L0,320 Z
+            "
+          />
+
+        </path>
+
+
+        <path
+          fill="#FFD600"
+          fill-opacity="0.14"
+        >
+
+          <animate
+            attributeName="d"
+            dur="7s"
+            repeatCount="indefinite"
+            values="
+              M0,220 C300,180 480,260 760,220 C1040,180 1200,260 1440,220 L1440,320 L0,320 Z;
+              M0,240 C300,280 480,180 760,240 C1040,300 1200,180 1440,240 L1440,320 L0,320 Z;
+              M0,220 C300,180 480,260 760,220 C1040,180 1200,260 1440,220 L1440,320 L0,320 Z
+            "
+          />
+
+        </path>
+
+      </svg>
+
+
+      <div class="section-inner">
+
+        <div class="section-title-wrap">
+
+          <h1 class="volumen">
+            Sobre nosotros
+          </h1>
+
+        </div>
+
+
+        <h2>
+
+          <b>Difaco Desing</b>
+          es una productora creativa que combina
+          comunicación y estrategia para transformar
+          ideas en experiencias visuales con impacto.
+
+        </h2>
+
+
+        <div class="about-badges">
+
+
+          <div class="tarjeta-cuadro">
+
+            <div class="icono-box">
+
+              <i class="fa-solid fa-camera-retro"></i>
+
+            </div>
+
+            <strong>
+              Fotografía
+            </strong>
+
+            <span>
+              profesional para eventos
+            </span>
+
+          </div>
+
+
+          <div class="tarjeta-cuadro">
+
+            <div class="icono-box">
+
+              <i class="fa-solid fa-bullhorn"></i>
+
+            </div>
+
+            <strong>
+              Marcas
+            </strong>
+
+            <span>
+              acompañadas cada mes
+            </span>
+
+          </div>
+
+
+          <div class="tarjeta-cuadro">
+
+            <div class="icono-box">
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+            <strong>
+              Cursos
+            </strong>
+
+            <span>
+              y mentorías 1 a 1
+            </span>
+
+          </div>
+
+
+          <div class="tarjeta-cuadro">
+
+            <div class="icono-box">
+
+              <i class="fa-solid fa-microphone-lines"></i>
+
+            </div>
+
+            <strong>
+              Estudio
+            </strong>
+
+            <span>
+              propio de grabación
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TRABAJOS REALIZADOS
+    ========================= -->
+
+    <section
+      class="section"
+      id="trabajos"
+    >
+
+      <div class="section-inner">
+
+        <div class="section-title-wrap">
+
+          <h1 class="volumen">
+            Trabajos realizados
+          </h1>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+
+          <div class="portfolio-card">
+
+            <span>
+              Social Media
+            </span>
+
+            <h3>
+              Estrategias digitales y contenido
+            </h3>
+
+            <p>
+
+              Desarrollo integral de campañas visuales,
+              pauta publicitaria y gestión de redes sociales
+              para pymes locales y marcas emergentes.
+
+            </p>
+
+          </div>
+
+
+          <div class="portfolio-card">
+
+            <span>
+              Fotografía
+            </span>
+
+            <h3>
+              Cobertura de eventos masivos y privados
+            </h3>
+
+            <p>
+
+              Fotografía profesional para conciertos,
+              bodas, graduaciones y lanzamientos corporativos
+              con entrega rápida y edición de alta calidad.
+
+            </p>
+
+          </div>
+
+
+          <div class="portfolio-card">
+
+            <span>
+              Producción Audiovisual
+            </span>
+
+            <h3>
+              Video-Podcasts y contenido multiformato
+            </h3>
+
+            <p>
+
+              Grabación multicámara, iluminación técnica,
+              locución profesional y postproducción de piezas
+              dinámicas creadas desde nuestro propio estudio.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             ENTREVISTA 1 · EDUARDO
+        ========================= -->
+
+        <div class="portfolio-video">
+
+          <span class="video-label">
+            Producción audiovisual
+          </span>
+
+          <h3>
+            Entrevista 1 · Eduardo — Transporte Bahía S.R.L.
+          </h3>
+
+          <p>
+            Entrevista a Eduardo, de Transporte Bahía S.R.L.,
+            como parte de nuestras producciones audiovisuales.
+          </p>
+
+
+          <div class="entrevista-link-box">
+
+            <a
+              class="entrevista-miniatura"
+              href="https://youtu.be/U9zRPHTMLtM"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver entrevista 1 de Eduardo en YouTube"
+            >
+
+              <img
+                src="https://i.ytimg.com/vi/U9zRPHTMLtM/hqdefault.jpg"
+                alt="Miniatura de la entrevista a Eduardo — Transporte Bahía S.R.L."
+              >
+
+              <span class="youtube-icon">
+
+                <i class="fa-brands fa-youtube"></i>
+
+              </span>
+
+            </a>
+
+
+            <div class="entrevista-texto">
+
+              <strong>
+                Eduardo — Transporte Bahía S.R.L.
+              </strong>
+
+              <a
+                class="youtube-directo"
+                href="https://youtu.be/U9zRPHTMLtM"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-youtube"></i>
+
+                Ver entrevista en YouTube
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             ENTREVISTA 2 · ELIANA MORENO
+        ========================= -->
+
+        <div class="portfolio-video">
+
+          <span class="video-label">
+            Producción audiovisual
+          </span>
+
+          <h3>
+            Entrevista 2 · Eliana Moreno
+          </h3>
+
+          <p>
+            Entrevista a Eliana Moreno. Una muestra del trabajo
+            audiovisual realizado por Difaco Desing.
+          </p>
+
+
+          <div class="entrevista-link-box">
+
+            <a
+              class="entrevista-miniatura"
+              href="https://youtu.be/IfIWefunsMc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver entrevista 2 de Eliana Moreno en YouTube"
+            >
+
+              <img
+                src="https://i.ytimg.com/vi/IfIWefunsMc/hqdefault.jpg"
+                alt="Miniatura de la entrevista a Eliana Moreno"
+              >
+
+              <span class="youtube-icon">
+
+                <i class="fa-brands fa-youtube"></i>
+
+              </span>
+
+            </a>
+
+
+            <div class="entrevista-texto">
+
+              <strong>
+                Eliana Moreno — Conversaciones Abiertas · Capítulo 2
+              </strong>
+
+              <a
+                class="youtube-directo"
+                href="https://youtu.be/IfIWefunsMc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-youtube"></i>
+
+                Ver entrevista en YouTube
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+    <!-- =========================
+         HISTORIA
+    ========================= -->
+
+    <section
+      class="section"
+      id="historia"
+    >
+
+      <div class="section-inner">
+
+        <div class="section-title-wrap">
+
+          <h1 class="volumen">
+            Nuestra historia
+          </h1>
+
+        </div>
+
+
+        <p class="story-text">
+
+          <b>Difaco Desing</b>
+          nació del impulso de conectar proyectos
+          con su audiencia a través de un lenguaje visual
+          auténtico y contemporáneo.
+
+          Lo que comenzó como un estudio enfocado
+          en el diseño gráfico fue evolucionando hasta
+          convertirse en una productora de multimedios
+          completa, capaz de abarcar desde el marketing
+          estratégico y la fotografía profesional hasta
+          capacitaciones y la producción audiovisual
+          en estudio propio.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICIOS
+    ========================= -->
+
+    <section
+      class="section"
+      id="servicios"
+    >
+
+      <div class="section-inner">
+
+        <div class="section-title-wrap">
+
+          <h1 class="volumen">
+            Servicios
+          </h1>
+
+        </div>
+
+
+        <p class="lead">
+
+          Elegí el servicio que tu proyecto necesita
+          y solicitá tu presupuesto personalizado
+          según la escala de tu proyecto o evento.
+
+        </p>
+
+
+        <div
+          class="carousel-track"
+          id="carouselTrack"
+        >
+
+
+          <article class="service-card">
+
+            <div class="service-icon">
+
+              <i class="fa-solid fa-bullhorn"></i>
+
+            </div>
+
+            <h2>
+              Marketing Digital
+            </h2>
+
+            <p>
+
+              Community management, contenido,
+              pauta publicitaria y estrategia de redes
+              para marcas y pymes.
+
+            </p>
+
+            <div class="service-btns">
+
+              <button
+                class="btn-price"
+                data-modal="marketing"
+              >
+                Ver más detalles
+              </button>
+
+              <a
+                class="btn-contact"
+                href="#contacto"
+              >
+                Solicitar contacto
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-icon">
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+            <h2>
+              Academia
+            </h2>
+
+            <p>
+
+              Talleres, cursos intensivos y consultoría
+              1 a 1 para emprendedores y estudiantes.
+
+            </p>
+
+            <div class="service-btns">
+
+              <button
+                class="btn-price"
+                data-modal="academia"
+              >
+                Ver más detalles
+              </button>
+
+              <a
+                class="btn-contact"
+                href="#contacto"
+              >
+                Solicitar contacto
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-icon">
+
+              <i class="fa-solid fa-camera-retro"></i>
+
+            </div>
+
+            <h2>
+              Fotografía de Eventos
+            </h2>
+
+            <p>
+
+              Cobertura profesional para todo tipo
+              de evento: cumpleaños, bodas, 15 años
+              o corporativos.
+
+            </p>
+
+            <div class="service-btns">
+
+              <button
+                class="btn-price"
+                data-modal="fotografia"
+              >
+                Ver más detalles
+              </button>
+
+              <a
+                class="btn-contact"
+                href="#contacto"
+              >
+                Solicitar contacto
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-icon">
+
+              <i class="fa-solid fa-microphone-lines"></i>
+
+            </div>
+
+            <h2>
+              Estudio de Grabación
+            </h2>
+
+            <p>
+
+              Video-podcast, edición, locución
+              y grabación musical en estudio profesional.
+
+            </p>
+
+            <div class="service-btns">
+
+              <button
+                class="btn-price"
+                data-modal="estudio"
+              >
+                Ver más detalles
+              </button>
+
+              <a
+                class="btn-contact"
+                href="#contacto"
+              >
+                Solicitar contacto
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="carousel-arrows">
+
+          <button
+            class="arrow-btn"
+            id="prevBtn"
+            aria-label="Anterior"
+          >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+          </button>
+
+          <button
+            class="arrow-btn"
+            id="nextBtn"
+            aria-label="Siguiente"
+          >
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================= -->
+
+    <section
+      class="section"
+      id="contacto"
+    >
+
+      <div class="section-inner">
+
+        <div class="section-title-wrap">
+
+          <h1 class="volumen">
+            Contacto
+          </h1>
+
+        </div>
+
+
+        <p
+          class="lead"
+          style="color:#2b2b2b;"
+        >
+
+          Contanos tu idea y armamos juntos
+          la propuesta ideal para tu marca o tu evento.
+
+        </p>
+
+
+        <div class="contact-grid">
+
+
+          <div class="contact-card">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h3>
+              Dirección
+            </h3>
+
+            <p>
+
+              Baden Powell 808,
+              Playa Unión,
+              Rawson, Chubut,
+              República Argentina
+
+              <br>
+
+              CP 9103
+
+            </p>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <h3>
+              Teléfono
+            </h3>
+
+            <p>
+
+              <a href="tel:+542804505367">
+                2804 505367
+              </a>
+
+            </p>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <h3>
+              Correo electrónico
+            </h3>
+
+            <p>
+
+              <a href="mailto:nicolas02dc@gmail.com">
+                nicolas02dc@gmail.com
+              </a>
+
+            </p>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>
+              Horario de atención
+            </h3>
+
+            <p>
+
+              Lunes a viernes, 9 a 18 hs
+
+              <br>
+
+              Consultas por WhatsApp todo el día
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <form
+          class="contact-form"
+          id="contactForm"
+        >
+
+          <div class="field">
+
+            <label for="nombre">
+              Nombre y apellido
+            </label>
+
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder="¿Cómo te llamás?"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="email">
+              Correo electrónico
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="tu@email.com"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="servicio">
+              Servicio de interés
+            </label>
+
+            <input
+              type="text"
+              id="servicio"
+              name="servicio"
+              placeholder="Ej: Fotografía de eventos"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="mensaje">
+              Contanos tu proyecto
+            </label>
+
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              placeholder="Fecha del evento, tipo de marca, lo que necesites..."
+            ></textarea>
+
+          </div>
+
+
+          <button type="submit">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Enviar mensaje
+
+          </button>
+
+        </form>
+
+
+        <!-- GOOGLE MAPS -->
+
+        <div class="map-embed">
+
+          <iframe
+            src="https://www.google.com/maps?q=Baden%20Powell%20808%2C%20Playa%20Uni%C3%B3n%2C%20Rawson%2C%20Chubut%2C%20Argentina&output=embed"
+            title="Ubicación de Difaco Desing - Baden Powell 808, Playa Unión"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-top">
+
+
+      <div class="footer-brand">
+
+        <img
+          src="assets/Logo Difaco Desing.jpeg"
+          alt="Difaco Desing"
+        >
+
+        <div class="brand-text">
+
+          <span
+            class="difaco"
+            style="font-size:1.1rem;"
+          >
+            Difaco
+          </span>
+
+          <span
+            class="desing"
+            style="color:var(--navy);font-size:.75rem;"
+          >
+            Desing
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="#inicio">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="#sobre-nosotros">
+            Sobre nosotros
+          </a>
+        </li>
+
+        <li>
+          <a href="#servicios">
+            Servicios
+          </a>
+        </li>
+
+        <li>
+          <a href="#contacto">
+            Contacto
+          </a>
+        </li>
+
+      </ul>
+
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.instagram.com/difaco_desing/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </a>
+
+
+        <a
+          href="https://www.facebook.com/difacodesing"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </a>
+
+
+        <a
+          href="https://wa.me/542804505367"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+
+          <i class="fa-brands fa-whatsapp"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      &copy;
+
+      <span id="year"></span>
+
+      Difaco Desing — Productora Multimedios.
+      Todos los derechos reservados.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       MODAL DE SERVICIOS
+  ========================= -->
+
+  <div
+    class="modal-overlay"
+    id="modalOverlay"
+  >
+
+    <div
+      class="modal-box"
+      id="modalBox"
+    >
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Cerrar"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* AÑO */
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+
+    /* MENÚ */
+
+    const burger =
+      document.getElementById('burgerBtn');
+
+    const nav =
+      document.getElementById('mainNav');
+
+
+    burger.addEventListener(
+      'click',
+      () => {
+
+        burger.classList.toggle('open');
+
+        nav.classList.toggle('open');
+
+      }
+    );
+
+
+    document
+      .querySelectorAll('.nav-link')
+      .forEach(link => {
+
+        link.addEventListener(
+          'click',
+          () => {
+
+            burger.classList.remove('open');
+
+            nav.classList.remove('open');
+
+          }
+        );
+
+      });
+
+
+    /* HEADER AL HACER SCROLL */
+
+    const header =
+      document.querySelector('header');
+
+
+    window.addEventListener(
+      'scroll',
+      () => {
+
+        header.style.padding =
+          window.scrollY > 40
+            ? '.4rem 5%'
+            : '.7rem 5%';
+
+      }
+    );
+
+
+    /* =========================
+       CARRUSEL DE SERVICIOS
+    ========================= */
+
+    const track =
+      document.getElementById('carouselTrack');
+
+    const prevBtn =
+      document.getElementById('prevBtn');
+
+    const nextBtn =
+      document.getElementById('nextBtn');
+
+
+    function cardStep(){
+
+      const card =
+        track.querySelector('.service-card');
+
+      return card
+        ? card.offsetWidth + 26
+        : 300;
+
+    }
+
+
+    prevBtn.addEventListener(
+      'click',
+      () => {
+
+        track.scrollBy({
+          left:-cardStep(),
+          behavior:'smooth'
+        });
+
+      }
+    );
+
+
+    nextBtn.addEventListener(
+      'click',
+      () => {
+
+        track.scrollBy({
+          left:cardStep(),
+          behavior:'smooth'
+        });
+
+      }
+    );
+
+
+    /* =========================
+       DATOS DE SERVICIOS
+    ========================= */
+
+    const serviceDetails = {
+
+      marketing: {
+
+        title:
+          'Marketing Digital & Social Media',
+
+        sub:
+          'Estrategias a medida para marcas locales y pymes',
+
+        items:[
+
+          {
+            h:'Plan Básico (Community Management)',
+
+            p:
+              'Gestión de 1 red social, diseño de publicaciones mensuales, copys estratégicos y respuesta a mensajes.'
+          },
+
+          {
+            h:'Plan Estándar / Profesional',
+
+            p:
+              'Gestión multired, creación de contenido variado (Carruseles, Stories y Reels), planificación mensual e informe de rendimiento.'
+          },
+
+          {
+            h:'Gestión de Pauta Publicitaria',
+
+            p:
+              'Configuración, segmentación y optimización de campañas activas en Meta Ads y Google Ads.'
+          },
+
+          {
+            h:'Auditoría + Identidad Visual',
+
+            p:
+              'Restructuración visual del feed, manual de marca, plantillas editables y asesoría estratégica.'
+          }
+
+        ]
+
+      },
+
+
+      academia: {
+
+        title:
+          'Academia',
+
+        sub:
+          'Capacitaciones dinámicas para emprendedores y creativos',
+
+        items:[
+
+          {
+            h:'Capacitación 1 (Taller Intensivo)',
+
+            p:
+              'Módulo inicial práctico orientado a fundamentos clave y herramientas de aplicación rápida.'
+          },
+
+          {
+            h:'Capacitación 2 (Programa Avanzado)',
+
+            p:
+              'Formación completa con mentoría personalizada, estrategias profundas y seguimiento individual del proyecto.'
+          }
+
+        ]
+
+      },
+
+
+      fotografia: {
+
+        title:
+          'Fotografía de Eventos',
+
+        sub:
+          'Cobertura adaptable según la escala de la jornada',
+
+        items:[
+
+          {
+            h:'Fiestas Privadas y Cumpleaños',
+
+            p:
+              'Cobertura por horas pactadas con entrega digital en alta resolución y edición profesional.'
+          },
+
+          {
+            h:'Eventos Sociales Grandes (Bodas y 15 Años)',
+
+            p:
+              'Cobertura completa de jornada, con opción de incorporar segundo fotógrafo, video y material impreso.'
+          },
+
+          {
+            h:'Eventos Corporativos e Institucionales',
+
+            p:
+              'Jornadas cortas o completas adaptadas a lanzamientos, conferencias y eventos de empresa.'
+          }
+
+        ]
+
+      },
+
+
+      estudio: {
+
+        title:
+          'Estudio de Grabación',
+
+        sub:
+          'Equipamiento profesional para proyectos de audio y video',
+
+        items:[
+
+          {
+            h:'Producción de Video-Podcast',
+
+            p:
+              'Grabación en set equipado, iluminación profesional, cámaras en simultáneo y monitoreo en vivo.'
+          },
+
+          {
+            h:'Edición y Postproducción',
+
+            p:
+              'Edición multicámara, sonorización, limpieza de audio y armado de clips/shorts para redes.'
+          },
+
+          {
+            h:'Locución y Grabación Musical',
+
+            p:
+              'Grabación de voces comerciales, audiolibros, maquetas musicales, mezcla y mastering.'
+          }
+
+        ]
+
+      }
+
+    };
+
+
+    /* =========================
+       MODALES
+    ========================= */
+
+    const overlay =
+      document.getElementById('modalOverlay');
+
+    const modalContent =
+      document.getElementById('modalContent');
+
+    const modalClose =
+      document.getElementById('modalClose');
+
+
+    document
+      .querySelectorAll('[data-modal]')
+      .forEach(btn => {
+
+        btn.addEventListener(
+          'click',
+          () => {
+
+            const data =
+              serviceDetails[
+                btn.dataset.modal
+              ];
+
+
+            if(!data){
+              return;
+            }
+
+
+            let html = `
+
+              <h3>
+                ${data.title}
+              </h3>
+
+              <div class="modal-sub">
+                ${data.sub}
+              </div>
+
+            `;
+
+
+            data.items.forEach(item => {
+
+              html += `
+
+                <div class="info-item">
+
+                  <h4>
+                    ${item.h}
+                  </h4>
+
+                  <p>
+                    ${item.p}
+                  </p>
+
+                </div>
+
+              `;
+
+            });
+
+
+            html += `
+
+              <a
+                class="modal-cta"
+                href="https://wa.me/542804505367"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Cotizar este servicio
+
+              </a>
+
+            `;
+
+
+            modalContent.innerHTML =
+              html;
+
+
+            overlay.classList.add('open');
+
+          }
+        );
+
+      });
+
+
+    modalClose.addEventListener(
+      'click',
+      () => {
+
+        overlay.classList.remove('open');
+
+      }
+    );
+
+
+    overlay.addEventListener(
+      'click',
+      event => {
+
+        if(event.target === overlay){
+
+          overlay.classList.remove('open');
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       ANIMACIÓN DEL HERO
+    ========================= */
+
+    const canvas =
+      document.getElementById('particleCanvas');
+
+    const ctx =
+      canvas.getContext('2d');
+
+    let particles = [];
+
+
+    function resizeCanvas(){
+
+      canvas.width =
+        window.innerWidth;
+
+      canvas.height =
+        window.innerHeight;
+
+    }
+
+
+    function createParticles(){
+
+      particles = [];
+
+      const amount =
+        Math.min(
+          70,
+          Math.floor(
+            window.innerWidth / 18
+          )
+        );
+
+
+      for(let i=0;i<amount;i++){
+
+        particles.push({
+
+          x:
+            Math.random() *
+            canvas.width,
+
+          y:
+            Math.random() *
+            canvas.height,
+
+          size:
+            Math.random() * 2 + 1,
+
+          speed:
+            Math.random() * .5 + .2,
+
+          opacity:
+            Math.random() * .6 + .2
+
+        });
+
+      }
+
+    }
+
+
+    function animateParticles(){
+
+      ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+
+      particles.forEach(p => {
+
+        p.y -= p.speed;
+
+
+        if(p.y < -10){
+
+          p.y =
+            canvas.height + 10;
+
+          p.x =
+            Math.random() *
+            canvas.width;
+
+        }
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+          p.x,
+          p.y,
+          p.size,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fillStyle =
+          `rgba(255,255,255,${p.opacity})`;
+
+        ctx.fill();
+
+      });
+
+
+      requestAnimationFrame(
+        animateParticles
+      );
+
+    }
+
+
+    resizeCanvas();
+
+    createParticles();
+
+    animateParticles();
+
+
+    window.addEventListener(
+      'resize',
+      () => {
+
+        resizeCanvas();
+
+        createParticles();
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
